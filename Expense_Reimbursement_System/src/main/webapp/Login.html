@@ -2,6 +2,12 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login Page</title>
+<style>
+h1 {text-align: center;}
+h2 {text-align: center;}
+h3 {text-align: center;}
+</style>
 <style>
 
 body {
@@ -73,10 +79,10 @@ span.psw {
 </style>
 </head>
 <body>
-<title>Login Page</title>
+<h1><b>Bharathinfo.msdk</b></h1>
 <h2><b>WELCOME BACK! TO OUR REIMBURSEMENT LOGIN PORTAL </b></h2>
-<p>Please Login to continue</p>
-<form action="/action_page.php" method="post">
+<h3>Please Login to continue</h3>
+<form action="http://localhost:8080/Expense_Reimbursement_System/LoginServlet" method="post">
   <div class="imgcontainer" >
     <img src="ava.png" alt="Avatar" class="avatar" >
   </div>
@@ -89,20 +95,21 @@ span.psw {
     <input type="password" placeholder="Enter Password" name="psw" required>
     
     <label><b>Employee Type</b></label>
-        <td><select> <option value="employee">Manager
-                     <option value="manager">Employee        
-        </select></td>  
+        <select name= "type"> 
+              <option value="Manager">Manager</option>
+              <option value="Employee">Employee </option>       
+        </select>
     
         
     <button type="submit">Login</button>
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+      <input type="checkbox" checked="checked" name="remember"> <b>Remember me</b>
     </label>
   </div>
 
   <div class="container" style="background-color:#ffedd1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <button type="reset" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="http://localhost:8080/Expense_Reimbursement_System/ForgetPassword.html">password?</a></span>
   </div>
 </form>
 

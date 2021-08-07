@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/ERS</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">kamesh15@</property>
+		<!-- JDBC connection pool (use the built-in) -->
+		<!-- <property name="connection.pool_size">1</property>  -->
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<mapping class="com.reimbursement.entity.EmployeeDetailsEntity" />
+		
+		
+		
+	</session-factory>
+</hibernate-configuration>

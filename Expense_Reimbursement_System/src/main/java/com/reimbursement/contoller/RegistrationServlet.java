@@ -12,9 +12,6 @@ import com.reimbursement.model.EmployeeDetails;
 import com.reimbursement.service.EmployeeRegistrationService;
 import com.reimbursement.service.EmployeeRegistrationServiceImpl;
 
-
-
-
 public class RegistrationServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,12 +38,13 @@ public class RegistrationServlet extends HttpServlet {
 		employee.setEmailid(email);
 		employee.setType(type);
 		
+		
 		EmployeeRegistrationService ersservice=new EmployeeRegistrationServiceImpl();
 		ersservice.addemployeedetails(employee);	
 		
-		request.setAttribute("EmployeeDetail", ersservice);
-		
-		response.sendRedirect("http://localhost:8080/Expense_Reimbursement_System/successfull.jsp");
+	    response.sendRedirect("http://localhost:8080/Expense_Reimbursement_System/Login.html");
+	     
+	     
 		
 		
 	}
