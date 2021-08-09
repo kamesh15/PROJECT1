@@ -16,6 +16,18 @@
   	<description></description>
   	<servlet-class>com.reimbursement.contoller.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ApplicationServlet</servlet-name>
+  	<display-name>ApplicationServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.reimbursement.contoller.ApplicationServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ReimdetailsvalidServlet</servlet-name>
+  	<display-name>ReimdetailsvalidServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.reimbursement.contoller.ReimdetailsvalidServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationServlet</servlet-name>
   	<url-pattern>/RegistrationServlet</url-pattern>
@@ -23,5 +35,13 @@
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApplicationServlet</servlet-name>
+  	<url-pattern>/ApplicationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReimdetailsvalidServlet</servlet-name>
+  	<url-pattern>/ReimdetailsvalidServlet</url-pattern>
   </servlet-mapping>
 </web-app>

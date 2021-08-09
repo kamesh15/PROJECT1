@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name="EmployeeDetails")
 public class EmployeeDetailsEntity {
@@ -13,7 +15,8 @@ public class EmployeeDetailsEntity {
 	@Column (name="Employee_id")
 	private String employeeId;
 	
-	@Column (name="Password")
+	@NotNull
+	@Column(name="Password",unique = true)
 	private String password;
 	
 	@Column (name="First_Name")
@@ -28,11 +31,15 @@ public class EmployeeDetailsEntity {
 	@Column (name="Department")
 	private String department;
 	
+	@Column (name="Phone_No")
+	private String phoneno;
+	
 	@Column (name="Email_ID")
 	private String emailid;
 	
 	@Column (name="Type")
 	private String type;
+	
 	
 	
 	public String getEmployeeId() {
@@ -83,7 +90,12 @@ public class EmployeeDetailsEntity {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+	public String getPhoneno() {
+		return phoneno;
+	}
+	public void setPhoneno(String phoneno) {
+		this.phoneno = phoneno;
+	}
 	
 
 	

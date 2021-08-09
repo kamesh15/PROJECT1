@@ -2,15 +2,18 @@ package com.reimbursement.contoller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.reimbursement.entity.EmployeeDetailsEntity;
 import com.reimbursement.model.EmployeeDetails;
-import com.reimbursement.service.EmployeeRegistrationService;
-import com.reimbursement.service.EmployeeRegistrationServiceImpl;
+import com.reimbursement.service.ReimbursementService;
+import com.reimbursement.service.ReimbursementServiceImpl;
 
 public class RegistrationServlet extends HttpServlet {
 	
@@ -26,6 +29,7 @@ public class RegistrationServlet extends HttpServlet {
 		String dep=request.getParameter("dep");
 		String des=request.getParameter("des");
 		String email=request.getParameter("email");
+		String phoneno=request.getParameter("phoneno");
 		String type=request.getParameter("type");
 		
 		EmployeeDetails employee=new EmployeeDetails();
@@ -36,16 +40,35 @@ public class RegistrationServlet extends HttpServlet {
 		employee.setDepartment(dep);
 		employee.setDesignation(des);
 		employee.setEmailid(email);
+		employee.setPhoneno(phoneno);
 		employee.setType(type);
 		
 		
-		EmployeeRegistrationService ersservice=new EmployeeRegistrationServiceImpl();
-		ersservice.addemployeedetails(employee);	
+		ReimbursementService ersservice=new ReimbursementServiceImpl();	
 		
-	    response.sendRedirect("http://localhost:8080/Expense_Reimbursement_System/Login.html");
-	     
-	     
-		
+		List<EmployeeDetailsEntity> elist=ersservice.registrationvalidation();
+		boolean isPresent=false;
+		RequestDispatcher rd=null;
+			
+		for(EmployeeDetailsEntity e:elist) {	
+			if(id.equals(e.getEmployeeId()) || email.equals(e.getEmailid())) 
+			{
+				isPresent=true;
+				break;
+			}
+		}
+	
+		if(isPresent) 
+		{
+			rd=request.getRequestDispatcher("AlreadyRegistered.jsp");
+			rd.forward(request, response);
+		}
+		else 
+		{
+			ersservice.addemployeedetails(employee);
+			rd=request.getRequestDispatcher("2Login.jsp");
+			rd.forward(request, response);
+		}
 		
 	}
 

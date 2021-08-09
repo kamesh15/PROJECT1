@@ -60,7 +60,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <body>
 <h1><b>Bharathinfo.msdk</b></h1>
 <h2>Give your details below to show your Reimbursement Details & Status</h2>
-<form action="http://localhost:8080/Expense_Reimbursement_System/empreimbursementdetails.html" method="post" style="max-width:500px;margin:auto">
+<form action="http://localhost:8080/Expense_Reimbursement_System/ReimdetailsvalidServlet.jsp" method="post" style="max-width:500px;margin:auto">
   
   <div class="input-container">
     <i class="fa fa-user icon"></i>

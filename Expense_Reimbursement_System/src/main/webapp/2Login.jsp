@@ -88,8 +88,9 @@ span.psw {
   </div>
 
   <div class="container">
+    
     <label for="uname"><b>Employee ID</b></label>
-    <input type="text" placeholder="Enter EmployeeID" name="uname" required>
+    <input type="text" placeholder="Enter EmployeeID" name="empid" required>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
@@ -105,6 +106,7 @@ span.psw {
     <label>
       <input type="checkbox" checked="checked" name="remember"> <b>Remember me</b>
     </label>
+    
   </div>
 
   <div class="container" style="background-color:#ffedd1">

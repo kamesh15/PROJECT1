@@ -14,10 +14,11 @@
 		<!-- SQL dialect -->
 		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
 		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<mapping class="com.reimbursement.entity.EmployeeDetailsEntity" />
-		
-		
+		<mapping class="com.reimbursement.entity.ReimbursementDetailsEntity" />
+	
 		
 	</session-factory>
 </hibernate-configuration>

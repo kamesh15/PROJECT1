@@ -1,17 +1,36 @@
-package com.reimbursement.model;
+package com.reimbursement.entity;
 
-public class ReimbursementDetails {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="ReimbursementDetails")
+public class ReimbursementDetailsEntity {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column (name="Reimbursement_Id")
 	private Integer reimbursementId;
-	private String reimbursementtype;
-	private Double amount;
-	private String description;
-	private String status;
-	//file upload
 	
+	@Column(name="Reimbursement_Type")
+	private String reimbursementtype;
+	
+	@Column(name="Reimbursement_Amount")
+	private Double amount;
+	
+	@Column(name="Description")
+	private String description;
+	
+	@Column(name="Reimbursement_Status")
+	private String status;
+
 	public Integer getReimbursementId() {
 		return reimbursementId;
 	}
+
 	public void setReimbursementId(Integer reimbursementId) {
 		this.reimbursementId = reimbursementId;
 	}
@@ -19,34 +38,33 @@ public class ReimbursementDetails {
 	public String getReimbursementtype() {
 		return reimbursementtype;
 	}
+
 	public void setReimbursementtype(String reimbursementtype) {
 		this.reimbursementtype = reimbursementtype;
 	}
+
 	public Double getAmount() {
 		return amount;
 	}
+
 	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	@Override
-	public String toString() {
-		return "ReimbursementDetails [reimbursementId=" + reimbursementId + ", reimbursementtype=" + reimbursementtype
-				+ ", amount=" + amount + ", description=" + description + ", status=" + status + "]";
-	}
-	
-	
-	
+
 }

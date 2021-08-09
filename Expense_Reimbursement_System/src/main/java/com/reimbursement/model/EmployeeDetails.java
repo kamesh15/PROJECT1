@@ -9,6 +9,7 @@ public class EmployeeDetails {
 	private String designation;
 	private String department;
 	private String emailid;
+	private String phoneno;
 	private String type;
 	
 	public String getEmployeeId() {
@@ -53,18 +54,26 @@ public class EmployeeDetails {
 	public void setEmailid(String emailid) {
 		this.emailid = emailid;
 	}
+	public String getPhoneno() {
+		return phoneno;
+	}
+	public void setPhoneno(String phoneno) {
+		this.phoneno = phoneno;
+	}
 	public String getType() {
 		return type;
 	}
 	public void setType(String type) {
 		this.type = type;
 	}
-	
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", password=" + password + ", firstname=" + firstname
+		return "EmployeeDetails [employeeId=" + employeeId + ", password=" + password + ", firstname=" + firstname
 				+ ", lastname=" + lastname + ", designation=" + designation + ", department=" + department
-				+ ", emailid=" + emailid + ", type=" + type + "]";
+				+ ", emailid=" + emailid + ", phoneno=" + phoneno + ", type=" + type + "]";
+	}
+	
+	
 	}
 
 	/*public EmployeeDetails(Integer employeeId, String password, String firstname, String lastname, String designation,
@@ -81,4 +90,3 @@ public class EmployeeDetails {
 	}*/
 	
 	
-}
