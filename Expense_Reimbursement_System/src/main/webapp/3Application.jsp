@@ -87,9 +87,9 @@ input[type=submit]:hover {
 <h2><b>Reimbursement Application Form</b></h2>
 <h3><b><i>Give appropriate details for your application</i></b></h3>
 
-<form  action="http://localhost:8080/Expense_Reimbursement_System/4appliedappform.jsp" method="post">
-<P><b>If you are already applied for Reimbursement, please click to see your Reimbursement Details & Status</b>
-<input type="submit" value="Click here to see your details ">
+<form  action="http://localhost:8080/Expense_Reimbursement_System/EmployeeHomePage.jsp" method="post">
+<P><b>If you are already applied for Reimbursement, go to home page </b>
+<input type="submit" value="Click here and go to home page">
 </form>
 <form>
 <p>------------------------------------------------------------------------------------------------------------------------------------

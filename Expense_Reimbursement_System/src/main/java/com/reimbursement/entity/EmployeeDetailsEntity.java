@@ -1,8 +1,13 @@
 package com.reimbursement.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
@@ -34,14 +39,21 @@ public class EmployeeDetailsEntity {
 	@Column (name="Phone_No")
 	private String phoneno;
 	
-	@Column (name="Email_ID")
+	@Column (name="Email_ID",unique =true)
 	private String emailid;
 	
 	@Column (name="Type")
 	private String type;
 	
+	@OneToMany(cascade=CascadeType.ALL,targetEntity=ReimbursementDetailsEntity.class)
+	List<ReimbursementDetailsEntity> reimbursementList;
 	
-	
+	public List<ReimbursementDetailsEntity> getReimbursementList() {
+		return reimbursementList;
+	}
+	public void setReimbursementList(List<ReimbursementDetailsEntity> reimbursementList) {
+		this.reimbursementList = reimbursementList;
+	}
 	public String getEmployeeId() {
 		return employeeId;
 	}
@@ -96,6 +108,15 @@ public class EmployeeDetailsEntity {
 	public void setPhoneno(String phoneno) {
 		this.phoneno = phoneno;
 	}
+	@Override
+	public String toString() {
+		return "EmployeeDetailsEntity [employeeId=" + employeeId + ", password=" + password + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", designation=" + designation + ", department=" + department
+				+ ", phoneno=" + phoneno + ", emailid=" + emailid + ", type=" + type + ", reimbursementList="
+				+ reimbursementList + "]";
+	}
+	
+	
 	
 
 	

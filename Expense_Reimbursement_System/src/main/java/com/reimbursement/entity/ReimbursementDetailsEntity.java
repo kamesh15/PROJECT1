@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +16,9 @@ public class ReimbursementDetailsEntity {
 	@Column (name="Reimbursement_Id")
 	private Integer reimbursementId;
 	
+	@Column (name="Employee_id")
+	private String employeeId;
+
 	@Column(name="Reimbursement_Type")
 	private String reimbursementtype;
 	
@@ -26,6 +30,17 @@ public class ReimbursementDetailsEntity {
 	
 	@Column(name="Reimbursement_Status")
 	private String status;
+	
+	/*@ManyToOne
+	private EmployeeDetailsEntity employeedetailsentity;
+
+	public EmployeeDetailsEntity getEmployeedetailsentity() {
+		return employeedetailsentity;
+	}
+
+	public void setEmployeedetailsentity(EmployeeDetailsEntity employeedetailsentity) {
+		this.employeedetailsentity = employeedetailsentity;
+	}*/
 
 	public Integer getReimbursementId() {
 		return reimbursementId;
@@ -66,5 +81,21 @@ public class ReimbursementDetailsEntity {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public String getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	@Override
+	public String toString() {
+		return "ReimbursementDetailsEntity [reimbursementId=" + reimbursementId + ", reimbursementtype="
+				+ reimbursementtype + ", amount=" + amount + ", description=" + description + ", status=" + status
+				+ "]";
+	}
+	
 
 }

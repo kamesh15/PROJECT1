@@ -11,6 +11,7 @@ public class ReimbursementDetailsMapper {
 	{
 		ReimbursementDetailsEntity reimentity=new ReimbursementDetailsEntity();
 		
+		reimentity.setEmployeeId(rd.getEmployeeId());
 		reimentity.setReimbursementId(rd.getReimbursementId());
 		reimentity.setReimbursementtype(rd.getReimbursementtype());
 		reimentity.setAmount(rd.getAmount());

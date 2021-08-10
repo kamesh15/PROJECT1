@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import com.reimbursement.entity.EmployeeDetailsEntity;
+import com.reimbursement.entity.ReimbursementDetailsEntity;
 import com.reimbursement.mapperdb.EmployeeDetailsMapper;
 import com.reimbursement.mapperdb.ReimbursementDetailsMapper;
 import com.reimbursement.model.EmployeeDetails;
@@ -65,7 +66,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 			
 		} catch (Exception e1) {
 			
-			e1.printStackTrace();
+		  e1.printStackTrace();
 		}
 		 
 		return elist;
@@ -87,10 +88,164 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 			
 			e1.printStackTrace();
 		}
-		 
 		
 	}
 	
+	public List<EmployeeDetailsEntity> displayallempdetails()
+	{
+		List<EmployeeDetailsEntity> elist=new ArrayList<EmployeeDetailsEntity>();
+		
+		try {
+					
+					Session session=HibernateUtil.getSessionFactory().openSession();
+					Query q=session.createQuery("from EmployeeDetailsEntity e"); 
+				    
+					
+					elist=q.list();	
+					
+				} catch (Exception e1) {
+					
+					e1.printStackTrace();
+				}
+				 
+				return elist;
+			}
+	
+	
+	public List<ReimbursementDetailsEntity> displayreimdetailsofemp(String empid)
+	{
+		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
+		
+		try {
+			
+			Session session=HibernateUtil.getSessionFactory().openSession();
+			String q="From ReimbursementDetailsEntity f where f.employeeId=\'"+empid+"\' ";
+			//String q="From ReimbursementDetailsEntity f where f.employeeId=\'"+empid+"\' and f.status='null'";
+			Query q1=session.createQuery(q); 
+		    
+			
+			elist=q1.list();	
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+		 
+		return elist;
+		
+	}
+	
+	public List<ReimbursementDetailsEntity> reimdetailsforemp(String empid)
+	{
+		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
+		
+		try {
+			
+			Session session=HibernateUtil.getSessionFactory().openSession();
+			String q="From ReimbursementDetailsEntity f where f.employeeId=\'"+empid+"\' ";
+			//String q="From ReimbursementDetailsEntity f where f.employeeId=\'"+empid+"\' and f.status='null'";
+			Query q1=session.createQuery(q); 
+		    
+			
+			elist=q1.list();	
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+		 
+		return elist;
+	
+	}
+	
+	
+	public List<EmployeeDetailsEntity> detailsofemp(String empid)
+	{
+		List<EmployeeDetailsEntity> elist=new ArrayList<EmployeeDetailsEntity>();
+		
+		try {
+					
+					Session session=HibernateUtil.getSessionFactory().openSession();
+					String q="From EmployeeDetailsEntity f where f.employeeId=\'"+empid+"\' ";
+					Query q1=session.createQuery(q); 
+				    
+					
+					elist=q1.list();	
+					
+				} catch (Exception e1) {
+					
+					e1.printStackTrace();
+				}
+				 
+				return elist;
+	}
+	
+	public List<ReimbursementDetailsEntity> viewallreimrequest()
+	{
+		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
+		
+		try {
+			
+			Session session=HibernateUtil.getSessionFactory().openSession();
+			Query q=session.createQuery("from ReimbursementDetailsEntity e"); 
+			elist=q.list();	
+			
+		} catch (Exception e1) {
+			
+		  e1.printStackTrace();
+		}
+		 
+		return elist;
+	}
+	
+	
+	public List<ReimbursementDetailsEntity> viewallapproved()
+	{
+		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
+		
+		try {
+			
+			Session session=HibernateUtil.getSessionFactory().openSession();
+		
+			String q="From ReimbursementDetailsEntity f where f.status='Accepted'";
+			Query q1=session.createQuery(q); 
+		   
+			elist=q1.list();	
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+		 
+		return elist;
+
+	}
+	
+	
+	public List<ReimbursementDetailsEntity> viewalldenied()
+	{
+		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
+		
+		try {
+			
+			Session session=HibernateUtil.getSessionFactory().openSession();
+		
+			String q="From ReimbursementDetailsEntity f where f.status='Rejected'";
+			Query q1=session.createQuery(q); 
+		   
+			elist=q1.list();	
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+		 
+		return elist;
+	}
 }
+	
+	
+	
+
 
 

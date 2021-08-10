@@ -3,6 +3,8 @@ package com.reimbursement.model;
 public class ReimbursementDetails {
 
 	private Integer reimbursementId;
+	private String employeeId;
+	
 	private String reimbursementtype;
 	private Double amount;
 	private String description;
@@ -15,6 +17,13 @@ public class ReimbursementDetails {
 	public void setReimbursementId(Integer reimbursementId) {
 		this.reimbursementId = reimbursementId;
 	}
+	public String getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
+	}
+
 
 	public String getReimbursementtype() {
 		return reimbursementtype;
@@ -40,12 +49,13 @@ public class ReimbursementDetails {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
 	@Override
 	public String toString() {
-		return "ReimbursementDetails [reimbursementId=" + reimbursementId + ", reimbursementtype=" + reimbursementtype
-				+ ", amount=" + amount + ", description=" + description + ", status=" + status + "]";
+		return "ReimbursementDetails [reimbursementId=" + reimbursementId + ", employeeId=" + employeeId
+				+ ", reimbursementtype=" + reimbursementtype + ", amount=" + amount + ", description=" + description
+				+ ", status=" + status + "]";
 	}
+	
 	
 	
 	

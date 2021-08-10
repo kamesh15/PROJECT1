@@ -51,13 +51,13 @@ public class LoginServlet extends HttpServlet {
 		
 		if(isPresent)
 		{
-			rd=request.getRequestDispatcher("3Application.jsp");
+			rd=request.getRequestDispatcher("EmployeeHomePage.jsp");
 			rd.forward(request, response);
 			//out.println("appplication");
 		}
 		else if(type.equalsIgnoreCase("Manager"))
 		{
-			rd=request.getRequestDispatcher("6ManagerPage.jsp");
+			rd=request.getRequestDispatcher("ManagerHomePage.jsp");
 			rd.forward(request, response);
 			//out.println("manager");
 		} 

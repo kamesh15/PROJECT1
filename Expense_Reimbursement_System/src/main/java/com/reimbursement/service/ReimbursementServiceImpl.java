@@ -5,6 +5,7 @@ import java.util.List;
 import com.reimbursement.dao.ReimbursementDAO;
 import com.reimbursement.dao.ReimbursementDAOImpl;
 import com.reimbursement.entity.EmployeeDetailsEntity;
+import com.reimbursement.entity.ReimbursementDetailsEntity;
 import com.reimbursement.model.EmployeeDetails;
 import com.reimbursement.model.ReimbursementDetails;
 
@@ -32,4 +33,39 @@ public class ReimbursementServiceImpl implements ReimbursementService{
 		employeedao.addemployeereimdetails(rd);
 	}
 	
+	public List<EmployeeDetailsEntity> displayallempdetails()
+	{
+		return employeedao.displayallempdetails();
+	}
+	
+	public List<ReimbursementDetailsEntity> displayreimdetailsofemp(String empid)
+	{
+		return employeedao.displayreimdetailsofemp(empid);
+	}
+	
+	public List<ReimbursementDetailsEntity> reimdetailsforemp(String empid)
+	{
+		return employeedao.reimdetailsforemp(empid);
+	}
+	
+	public List<EmployeeDetailsEntity> detailsofemp(String empid)
+	{
+		return employeedao.detailsofemp(empid);
+	}
+	
+	public List<ReimbursementDetailsEntity> viewallreimrequest()
+	{
+		return employeedao.viewallreimrequest();
+	}
+	
+	public List<ReimbursementDetailsEntity> viewallapproved()
+	{
+		return employeedao.viewallapproved();
+	}
+	
+	public List<ReimbursementDetailsEntity> viewalldenied()
+	{
+		return employeedao.viewalldenied();
+	}
 }
+
