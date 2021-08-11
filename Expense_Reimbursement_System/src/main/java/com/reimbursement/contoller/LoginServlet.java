@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 		RequestDispatcher rd=null;
 			
 		for(EmployeeDetailsEntity e:elist) {
-			if(empid.equals(e.getEmployeeId()) && type.equalsIgnoreCase("Employee")) 
+			if(empid.equals(e.getEmployeeId()) && type.equalsIgnoreCase("Employee") && emppwd.equals(e.getPassword())) 
 			{
 				isPresent=true;
 				break;

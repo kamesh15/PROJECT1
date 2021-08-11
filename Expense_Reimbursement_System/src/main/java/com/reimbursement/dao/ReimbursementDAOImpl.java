@@ -230,7 +230,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();
 		
-			String q="From ReimbursementDetailsEntity f where f.status='Rejected'";
+			String q="From ReimbursementDetailsEntity f where f.status=null";
 			Query q1=session.createQuery(q); 
 		   
 			elist=q1.list();	

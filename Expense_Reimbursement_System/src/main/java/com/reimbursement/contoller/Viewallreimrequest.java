@@ -27,14 +27,16 @@ public class Viewallreimrequest extends HttpServlet {
 		List<EmployeeDetailsEntity> elist=ersservice.displayallempdetails();
 		List<ReimbursementDetailsEntity> rlist=ersservice.viewallreimrequest();
 		
-		out.println("<table width=500 height=500 border=1>");
+		out.println("<table width=1300 height=500 border=1>");
 		out.println("<caption> Employee Details and Employee Reimbursement Details </caption>");
 		
 		for(EmployeeDetailsEntity e: elist)
 		{
 			out.println("<tr><td>"+"Employe ID: "+e.getEmployeeId()+"</td><td>"+"First Name: "+e.getFirstname()+"</td><td>"+"Last Name: "+e.getLastname()+"</td><td>"+"Department: "+e.getDepartment()+"</td><td>"+"Designation: "+e.getDesignation()+"</td><td>"+"Phone no: "+e.getPhoneno()+"</td><td>"+"Email ID: "+e.getEmailid()+"</tr></td>" );
 		}
-			
+		out.println("</table>");
+		out.println("<table width=1300 height=700 border=1>");
+		
 		for(ReimbursementDetailsEntity r:rlist)
 		{
 				out.println("<tr><td>"+"Reimbursement_id: "+r.getReimbursementId()+"</td><td>"+"Employee_Id: "+r.getEmployeeId()+"</td><td>"+"Type of reimbursement: "+r.getReimbursementtype()+"</td><td>"+"Amount of reimbursement: Rs."+r.getAmount()+"</td><td>"+"Reimbursement Description: "+r.getDescription()+"</td><td>"+"Status: "+r.getStatus()+"</tr></td>");

@@ -28,7 +28,7 @@ public class Viewallapproved extends HttpServlet {
 		
 		List<ReimbursementDetailsEntity> rlist=ersservice.viewallapproved();
 		
-		out.println("<table width=500 height=500 border=1>");
+		out.println("<table width=1000 height=500 border=1>");
 		out.println("<caption> Employee Details </caption>");
 		
 		for(EmployeeDetailsEntity e: elist)
@@ -37,7 +37,7 @@ public class Viewallapproved extends HttpServlet {
 		}
 		out.println("</table>");
 		
-		out.println("<table width=500 height=500 border=1>");
+		out.println("<table width=1000 height=500 border=1>");
 		out.println("<caption> Approved Reimbursement Details </caption>");
 		for(ReimbursementDetailsEntity r:rlist)
 		{

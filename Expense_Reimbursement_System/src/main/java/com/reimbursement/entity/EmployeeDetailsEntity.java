@@ -46,6 +46,7 @@ public class EmployeeDetailsEntity {
 	private String type;
 	
 	@OneToMany(cascade=CascadeType.ALL,targetEntity=ReimbursementDetailsEntity.class)
+	
 	List<ReimbursementDetailsEntity> reimbursementList;
 	
 	public List<ReimbursementDetailsEntity> getReimbursementList() {

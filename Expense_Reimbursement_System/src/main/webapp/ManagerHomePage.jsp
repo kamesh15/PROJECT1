@@ -42,7 +42,7 @@ body {
 <input type="submit" value=" View all approved Reimbursement Requests">
 </form>
 
-<form action="http://localhost:8080/Expense_Reimbursement_System/3Application.jsp"  method="post">
+<form action="http://localhost:8080/Expense_Reimbursement_System/Viewalldenied"  method="post">
 <input type="submit" value=" View all Denied Reimbursement Requests">
 </form>
 </div>

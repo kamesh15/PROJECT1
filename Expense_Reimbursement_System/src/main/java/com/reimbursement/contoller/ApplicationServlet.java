@@ -51,7 +51,7 @@ public class ApplicationServlet extends HttpServlet {
 				
 				for(ReimbursementDetailsEntity e: elist)
 				{
-				    out.println("<tr><td>"+"Reimbursement_id: "+e.getReimbursementId()+"</td><td>"+"Employee_Id: "+e.getEmployeeId()+"</td><td>"+"Type of reimbursement: "+e.getReimbursementtype()+"</td><td>"+"Amount of reimbursement: Rs."+e.getAmount()+"</td><td>"+"Reimbursement Description: "+e.getDescription()+"</td><td>"+"Status: "+e.getStatus()+"</tr><td>");                                              
+				    out.println("<tr><td>"+"Reimbursement_id: "+e.getReimbursementId()+"</td><td>"+"Employee_Id: "+e.getEmployeeId()+"</td><td>"+"Type of reimbursement: "+e.getReimbursementtype()+"</td><td>"+"Amount of reimbursement: Rs."+e.getAmount()+"</td><td>"+"Reimbursement Description: "+e.getDescription()+"</td><td>"+"Status: "+e.getStatus()+"</tr></td>");                                              
 				}
 				out.println("</table>");
 				

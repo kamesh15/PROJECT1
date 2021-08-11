@@ -82,6 +82,7 @@ span.psw {
 <h1><b>Bharathinfo.msdk</b></h1>
 <h2><b>WELCOME BACK! TO OUR REIMBURSEMENT LOGIN PORTAL </b></h2>
 <h3>Please Login to continue</h3>
+<p><a href="http://localhost:8080/Expense_Reimbursement_System/1Registration.jsp">Back to Sign up</a></p>
 <form action="http://localhost:8080/Expense_Reimbursement_System/LoginServlet" method="post">
   <div class="imgcontainer" >
     <img src="ava.png" alt="Avatar" class="avatar" >
