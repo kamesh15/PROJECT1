@@ -30,4 +30,8 @@ public interface ReimbursementDAO {
 	public List<ReimbursementDetailsEntity> viewallapproved();
 	
 	public List<ReimbursementDetailsEntity> viewalldenied();
+	
+	public List<ReimbursementDetailsEntity> viewallpending();
+	
+	public void updateReimbursementRequest(Integer reimbursementId ,String status);
 }

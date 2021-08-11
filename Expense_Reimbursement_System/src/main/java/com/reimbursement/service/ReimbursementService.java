@@ -32,4 +32,8 @@ public interface ReimbursementService {
 	public List<ReimbursementDetailsEntity> viewallapproved();
 	
 	public List<ReimbursementDetailsEntity> viewalldenied();
+	
+	public List<ReimbursementDetailsEntity> viewallpending();
+	
+	public void updateReimbursementRequest(Integer rid ,String type);
 }

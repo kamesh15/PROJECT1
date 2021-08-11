@@ -29,6 +29,11 @@ body {
 <h2><b>Welcome to Employee Home Page</b></h2>
 <div class="center">
 <form action="http://localhost:8080/Expense_Reimbursement_System/3Application.jsp"  method="post">
+<div class="row">
+       <div class="col-25">
+ <label for="empid">Click to Apply Reimbursement Application</label>
+ </div>
+ </div>
 <input type="submit" value=" Reimbursement Application">
 </form>
 </div>
@@ -37,10 +42,10 @@ body {
 <form action="http://localhost:8080/Expense_Reimbursement_System/Reimdetailsforemp"  method="post">
 <div class="row">
       <div class="col-25">
-        <label for="empid">Give Your Employee Id to View Your Reimbursement Status</label>
+        <label for="empid">Click to View Your Reimbursement Status</label>
       </div>
       <div class="col-75">
-        <input type="text" id="empid"  name="empid" placeholder="your employee id" required>
+        <!--<input type="text" id="empid"  name="empid" placeholder="your employee id" required>-->
       </div>
     </div>
 <input type="submit" value=" View Your Reimbursement Details">
@@ -50,20 +55,21 @@ body {
 <form action="http://localhost:8080/Expense_Reimbursement_System/Detailsofemp"  method="post">
 <div class="row">
       <div class="col-25">
-        <label for="empid">Give Your Employee Id to View Your Personal details</label>
+        <label for="empid">Click to View Your Personal details</label>
       </div>
       <div class="col-75">
-        <input type="text" id="empid"  name="empid" placeholder="your employee id" required>
+        <!--  <input type="text" id="empid"  name="empid" placeholder="your employee id" required>-->
       </div>
     </div>
 <input type="submit" value=" View Your Personal Details">
 </form>
 </div>
 
+<div class="center">
 <form action="http://localhost:8080/Expense_Reimbursement_System/2Login.jsp"  method="post">
 <input type="submit" value=" Log out">
 </form>
-
+</div>
 
 </body>
 </html>

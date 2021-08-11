@@ -230,6 +230,27 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();
 		
+			String q="From ReimbursementDetailsEntity f where f.status='Rejected'";
+			Query q1=session.createQuery(q); 
+		   
+			elist=q1.list();	
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+		 
+		return elist;
+	}
+	
+	public List<ReimbursementDetailsEntity> viewallpending()
+	{
+		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
+		
+		try {
+			
+			Session session=HibernateUtil.getSessionFactory().openSession();
+		
 			String q="From ReimbursementDetailsEntity f where f.status=null";
 			Query q1=session.createQuery(q); 
 		   
@@ -241,6 +262,29 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		}
 		 
 		return elist;
+	}
+	
+	public void updateReimbursementRequest(Integer reimbursementId ,String status)
+	{
+		try {
+			
+			Session session=HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();  
+			
+		
+			ReimbursementDetailsEntity rde=session.load(ReimbursementDetailsEntity.class, reimbursementId);
+			
+			rde.setStatus(status);
+			session.merge(rde);  
+		
+			System.out.println("status Updated....");
+			session.getTransaction().commit();
+			session.close();
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
 	}
 }
 	

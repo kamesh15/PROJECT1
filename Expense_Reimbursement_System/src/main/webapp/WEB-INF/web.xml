@@ -23,12 +23,6 @@
   	<servlet-class>com.reimbursement.contoller.ApplicationServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>ManagerServlet</servlet-name>
-  	<display-name>ManagerServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.reimbursement.contoller.ManagerServlet</servlet-class>
-  </servlet>
-  <servlet>
   	<servlet-name>Reimdetailsforemp</servlet-name>
   	<display-name>Reimdetailsforemp</display-name>
   	<description></description>
@@ -58,6 +52,18 @@
   	<description></description>
   	<servlet-class>com.reimbursement.contoller.Viewalldenied</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UpdateApproveDeny</servlet-name>
+  	<display-name>UpdateApproveDeny</display-name>
+  	<description></description>
+  	<servlet-class>com.reimbursement.contoller.UpdateApproveDeny</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdatePageServlet</servlet-name>
+  	<display-name>UpdatePageServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.reimbursement.contoller.UpdatePageServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationServlet</servlet-name>
   	<url-pattern>/RegistrationServlet</url-pattern>
@@ -69,10 +75,6 @@
   <servlet-mapping>
   	<servlet-name>ApplicationServlet</servlet-name>
   	<url-pattern>/ApplicationServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ManagerServlet</servlet-name>
-  	<url-pattern>/ManagerServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>Reimdetailsforemp</servlet-name>
@@ -93,5 +95,13 @@
   <servlet-mapping>
   	<servlet-name>Viewalldenied</servlet-name>
   	<url-pattern>/Viewalldenied</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateApproveDeny</servlet-name>
+  	<url-pattern>/UpdateApproveDeny</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdatePageServlet</servlet-name>
+  	<url-pattern>/UpdatePageServlet</url-pattern>
   </servlet-mapping>
 </web-app>

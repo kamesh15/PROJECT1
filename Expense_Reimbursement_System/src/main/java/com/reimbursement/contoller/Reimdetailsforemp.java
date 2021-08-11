@@ -22,7 +22,7 @@ public class Reimdetailsforemp extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
-		String empid=request.getParameter("empid");
+		String empid=String.valueOf(request.getSession().getAttribute("empid"));
 		ReimbursementDetails reimdetails=new ReimbursementDetails();
 		
 		reimdetails.setEmployeeId(empid);
@@ -32,10 +32,10 @@ public class Reimdetailsforemp extends HttpServlet {
 		
 		out.println("<table width=1300 height=700 border=1>");
 		out.println("<caption> Your all Reimbursement details </caption>");
-		
+		out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");
 		for(ReimbursementDetailsEntity e: elist)
 		{
-		    out.println("<tr><td>"+"Reimbursement_id: "+e.getReimbursementId()+"</td><td>"+"Employee_Id: "+e.getEmployeeId()+"</td><td>"+"Type of reimbursement: "+e.getReimbursementtype()+"</td><td>"+"Amount of reimbursement: Rs."+e.getAmount()+"</td><td>"+"Reimbursement Description: "+e.getDescription()+"</td><td>"+"Status: "+e.getStatus()+"</tr></td>");                                              
+			out.println("<tr><td>"+e.getReimbursementId()+"</td><td>"+e.getEmployeeId()+"</td><td>"+e.getReimbursementtype()+"</td><td>"+" Rs. "+e.getAmount()+"</td><td>"+e.getDescription()+"</td><td>"+e.getStatus()+"</tr></td>");                                              
 		}
 		out.println("</table>");
 		

@@ -67,5 +67,15 @@ public class ReimbursementServiceImpl implements ReimbursementService{
 	{
 		return employeedao.viewalldenied();
 	}
+	
+	public List<ReimbursementDetailsEntity> viewallpending()
+	{
+		return employeedao.viewallpending();
+	}
+	
+	public void updateReimbursementRequest(Integer rid ,String type)
+	{
+		 employeedao.updateReimbursementRequest(rid, type);
+	}
 }
 

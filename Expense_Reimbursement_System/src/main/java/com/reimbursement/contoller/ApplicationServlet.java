@@ -25,7 +25,7 @@ public class ApplicationServlet extends HttpServlet {
 				response.setContentType("text/html");
 				PrintWriter out=response.getWriter();
 				
-				String empid=request.getParameter("empid");
+				String empid=String.valueOf(request.getSession().getAttribute("empid"));
 				String reimtype=request.getParameter("type");
 				String reimamount=request.getParameter("amount");
 				String desc=request.getParameter("subject");
@@ -34,7 +34,6 @@ public class ApplicationServlet extends HttpServlet {
 				
 			    
 				reimdetails.setEmployeeId(empid);
-				
 				reimdetails.setReimbursementtype(reimtype);
 				reimdetails.setAmount( Double.parseDouble(reimamount));
 				reimdetails.setDescription(desc);
@@ -46,12 +45,12 @@ public class ApplicationServlet extends HttpServlet {
 				
 				List<ReimbursementDetailsEntity> elist=ersservice.displayreimdetailsofemp(empid);
 				
-				out.println("<table width=1300 height=700 border=1>");
+				out.println("<table width=1300 height=700 border=1 style='background-color:#bfceff'>");
 				out.println("<caption> Your all Reimbursement details </caption>");
-				
+				out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");
 				for(ReimbursementDetailsEntity e: elist)
 				{
-				    out.println("<tr><td>"+"Reimbursement_id: "+e.getReimbursementId()+"</td><td>"+"Employee_Id: "+e.getEmployeeId()+"</td><td>"+"Type of reimbursement: "+e.getReimbursementtype()+"</td><td>"+"Amount of reimbursement: Rs."+e.getAmount()+"</td><td>"+"Reimbursement Description: "+e.getDescription()+"</td><td>"+"Status: "+e.getStatus()+"</tr></td>");                                              
+					out.println("<tr><td>"+e.getReimbursementId()+"</td><td>"+e.getEmployeeId()+"</td><td>"+e.getReimbursementtype()+"</td><td>"+" Rs. "+e.getAmount()+"</td><td>"+e.getDescription()+"</td><td>"+e.getStatus()+"</tr></td>");                                              
 				}
 				out.println("</table>");
 				

@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 		String emppwd=request.getParameter("psw");
 	    String type=request.getParameter("type");
 		
+		
 	    EmployeeDetails employee=new EmployeeDetails();
 	    
 		employee.setEmployeeId(empid);
@@ -51,6 +52,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if(isPresent)
 		{
+			request.getSession().setAttribute("empid", empid);
 			rd=request.getRequestDispatcher("EmployeeHomePage.jsp");
 			rd.forward(request, response);
 			//out.println("appplication");

@@ -15,8 +15,8 @@ import com.reimbursement.service.ReimbursementService;
 import com.reimbursement.service.ReimbursementServiceImpl;
 
 
-public class Viewalldenied extends HttpServlet {
-
+public class UpdatePageServlet extends HttpServlet {
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
@@ -26,19 +26,19 @@ public class Viewalldenied extends HttpServlet {
 		
 		List<EmployeeDetailsEntity> elist=ersservice.displayallempdetails();
 		
-		List<ReimbursementDetailsEntity> rlist=ersservice.viewalldenied();
+		List<ReimbursementDetailsEntity> rlist=ersservice.viewallpending();
 		
-		out.println("<table width=1000 height=500 border=1>");
+		out.println("<table width=70% height=50% border=1>");
 		out.println("<caption> Employee Details </caption>");
-		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Designation</th><th>Phone no</th><th>Email Id</th><tr>");
+		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Email Id</th><tr>");
 		for(EmployeeDetailsEntity e: elist)
 		{
-			out.println("<tr><td>"+e.getEmployeeId()+"</td><td>"+e.getFirstname()+"</td><td>"+e.getLastname()+"</td><td>"+e.getDepartment()+"</td><td>"+e.getDesignation()+"</td><td>"+e.getPhoneno()+"</td><td>"+e.getEmailid()+"</tr></td>" );
+			out.println("<tr><td>"+e.getEmployeeId()+"</td><td>"+e.getFirstname()+"</td><td>"+e.getLastname()+"</td><td>"+e.getDepartment()+"</td><td>"+e.getEmailid()+"</tr></td>" );
 		}
 		out.println("</table>");
 		
 		out.println("<table width=1300 height=700 border=1>");
-		out.println("<caption> Denied Reimbursement Details </caption>");
+		out.println("<caption> Pending Reimbursement Details </caption>");
 		out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");
 		for(ReimbursementDetailsEntity r:rlist)
 		{
@@ -47,7 +47,23 @@ public class Viewalldenied extends HttpServlet {
 		
 		out.println("</table>");
 		
-		out.println("<form action='ManagerHomePage.jsp'> <input type='submit' value='back to Home'></form> ");
+		out.println("<p> Beign Your Admistration for Approve/Deny the Reimbursement Application" );
+		
+		out.println("<form action='http://localhost:8080/Expense_Reimbursement_System/UpdateApproveDeny'  method='post'>");
+		out.println("<caption> Select the option from all reimbursement Request which need to be Updated Reimbursement Id :  </caption>");
+		out.println("<select name='rid'>");
+		
+		for(ReimbursementDetailsEntity r:rlist) {
+			
+			out.println("<option name='rid'>"+r.getReimbursementId()+"");
+		}
+		out.println("</select>");
+		out.println("<input type='submit' name='type' value='Accepted'/>");
+		out.println("<input type='submit' name='type' value='Rejected'/>");
+		out.println("</form>");
 	}
-
+	
 }
+
+
+

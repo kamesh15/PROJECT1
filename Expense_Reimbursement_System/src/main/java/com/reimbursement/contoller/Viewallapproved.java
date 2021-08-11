@@ -30,18 +30,19 @@ public class Viewallapproved extends HttpServlet {
 		
 		out.println("<table width=1000 height=500 border=1>");
 		out.println("<caption> Employee Details </caption>");
-		
+		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Designation</th><th>Phone no</th><th>Email Id</th><tr>");
 		for(EmployeeDetailsEntity e: elist)
 		{
-			out.println("<tr><td>"+"Employe ID: "+e.getEmployeeId()+"</td><td>"+"First Name: "+e.getFirstname()+"</td><td>"+"Last Name: "+e.getLastname()+"</td><td>"+"Department: "+e.getDepartment()+"</td><td>"+"Designation: "+e.getDesignation()+"</td><td>"+"Phone no: "+e.getPhoneno()+"</td><td>"+"Email ID: "+e.getEmailid()+"</tr></td>" );
+			out.println("<tr><td>"+e.getEmployeeId()+"</td><td>"+e.getFirstname()+"</td><td>"+e.getLastname()+"</td><td>"+e.getDepartment()+"</td><td>"+e.getDesignation()+"</td><td>"+e.getPhoneno()+"</td><td>"+e.getEmailid()+"</tr></td>" );
 		}
 		out.println("</table>");
 		
 		out.println("<table width=1000 height=500 border=1>");
 		out.println("<caption> Approved Reimbursement Details </caption>");
+		out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");
 		for(ReimbursementDetailsEntity r:rlist)
 		{
-			out.println("<tr><td>"+"Reimbursement_id: "+r.getReimbursementId()+"</td><td>"+"Employee_Id: "+r.getEmployeeId()+"</td><td>"+"Type of reimbursement: "+r.getReimbursementtype()+"</td><td>"+"Amount of reimbursement: Rs."+r.getAmount()+"</td><td>"+"Reimbursement Description: "+r.getDescription()+"</td><td>"+"Status: "+r.getStatus()+"</tr></td>");
+			out.println("<tr><td>"+r.getReimbursementId()+"</td><td>"+r.getEmployeeId()+"</td><td>"+r.getReimbursementtype()+"</td><td>"+" Rs. "+r.getAmount()+"</td><td>"+r.getDescription()+"</td><td>"+r.getStatus()+"</tr></td>");
 		}
 		
 		out.println("</table>");

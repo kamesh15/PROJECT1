@@ -18,7 +18,7 @@ body {
 .center {
   margin: auto;
   width: 40%;
-  border: 3px solid #fc0585;
+  border: 3px solid #ad0000;
   padding: 10px;
 }
 </style>
@@ -33,15 +33,21 @@ body {
 <form action="http://localhost:8080/Expense_Reimbursement_System/Viewallreimrequest"  method="post">
 <input type="submit" value=" View all Reimbursement Requests">
 </form>
+</div>
 
-<form action="http://localhost:8080/Expense_Reimbursement_System/3Application.jsp"  method="post">
+<div class="center">
+<form action="http://localhost:8080/Expense_Reimbursement_System/UpdatePageServlet"  method="post">
 <input type="submit" value=" Approve/Deny Reimbursement Requests ">
 </form>
+</div>
 
+<div class="center">
 <form action="http://localhost:8080/Expense_Reimbursement_System/Viewallapproved"  method="post">
 <input type="submit" value=" View all approved Reimbursement Requests">
 </form>
+</div>
 
+<div class="center">
 <form action="http://localhost:8080/Expense_Reimbursement_System/Viewalldenied"  method="post">
 <input type="submit" value=" View all Denied Reimbursement Requests">
 </form>

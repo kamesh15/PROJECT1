@@ -22,19 +22,20 @@ public class Detailsofemp extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		EmployeeDetails employee=new EmployeeDetails();
-		String empid=request.getParameter("empid");
+		
+		String empid=String.valueOf(request.getSession().getAttribute("empid"));
 		employee.setEmployeeId(empid);
 		
 		ReimbursementService ersservice=new ReimbursementServiceImpl();	
 		
 		List<EmployeeDetailsEntity> elist=ersservice.detailsofemp(empid);
 		
-		out.println("<table width=1300 height=100 border=1>");
+		out.println("<table width=1300 height=100 border=1 style='background-color:#bfceff'>");
 		out.println("<caption> Your personal details </caption>");
-		
+		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Designation</th><th>Phone no</th><th>Email Id</th><tr>");
 		for(EmployeeDetailsEntity e:elist)
 		{
-			out.println("<tr><td>"+"Employe ID: "+e.getEmployeeId()+"</td><td>"+"First Name: "+e.getFirstname()+"</td><td>"+"Last Name: "+e.getLastname()+"</td><td>"+"Department: "+e.getDepartment()+"</td><td>"+"Designation: "+e.getDesignation()+"</td><td>"+"Phone no: "+e.getPhoneno()+"</td><td>"+"Email ID: "+e.getEmailid()+"</tr></td>" );
+			out.println("<tr><td>"+e.getEmployeeId()+"</td><td>"+e.getFirstname()+"</td><td>"+e.getLastname()+"</td><td>"+e.getDepartment()+"</td><td>"+e.getDesignation()+"</td><td>"+e.getPhoneno()+"</td><td>"+e.getEmailid()+"</tr></td>" );
 		}
 		
 		out.println("</table>");
