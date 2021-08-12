@@ -22,13 +22,12 @@ public class Viewallapproved extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
-		ReimbursementService ersservice=new ReimbursementServiceImpl();
+		ReimbursementService ersservice = new ReimbursementServiceImpl();
 		
-		List<EmployeeDetailsEntity> elist=ersservice.displayallempdetails();
+		List<EmployeeDetailsEntity> elist = ersservice.displayallempdetails();
+		List<ReimbursementDetailsEntity> rlist = ersservice.viewallapproved();
 		
-		List<ReimbursementDetailsEntity> rlist=ersservice.viewallapproved();
-		
-		out.println("<table width=1000 height=500 border=1>");
+		out.println("<table width=85% height=55% border=1 style='background-color:#f0f5ff'>");
 		out.println("<caption> Employee Details </caption>");
 		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Designation</th><th>Phone no</th><th>Email Id</th><tr>");
 		for(EmployeeDetailsEntity e: elist)
@@ -37,7 +36,7 @@ public class Viewallapproved extends HttpServlet {
 		}
 		out.println("</table>");
 		
-		out.println("<table width=1000 height=500 border=1>");
+		out.println("<table width=85% height=55% border=1 style='background-color:#ccffcf'>");
 		out.println("<caption> Approved Reimbursement Details </caption>");
 		out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");
 		for(ReimbursementDetailsEntity r:rlist)

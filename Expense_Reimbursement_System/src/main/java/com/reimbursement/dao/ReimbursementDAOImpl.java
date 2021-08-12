@@ -27,6 +27,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 			session.save(EmployeeDetailsMapper.mapEmployee(ed));
 			System.out.println("employee details inserted...");
 			session.getTransaction().commit();
+			//session.close();
 			
 		} catch (Exception e1) {
 			
@@ -120,7 +121,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();
 			String q="From ReimbursementDetailsEntity f where f.employeeId=\'"+empid+"\' ";
-			//String q="From ReimbursementDetailsEntity f where f.employeeId=\'"+empid+"\' and f.status='null'";
+			
 			Query q1=session.createQuery(q); 
 		    
 			
@@ -143,7 +144,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();
 			String q="From ReimbursementDetailsEntity f where f.employeeId=\'"+empid+"\' ";
-			//String q="From ReimbursementDetailsEntity f where f.employeeId=\'"+empid+"\' and f.status='null'";
+			
 			Query q1=session.createQuery(q); 
 		    
 			
@@ -286,6 +287,36 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 			e1.printStackTrace();
 		}
 	}
+	
+	
+	
+	public void updateprofile(EmployeeDetails ed)
+	{
+		try {
+			Session session=HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction(); 
+			EmployeeDetailsEntity ede = EmployeeDetailsMapper.mapEmployee(ed);
+			EmployeeDetailsEntity ede1 = session.load(EmployeeDetailsEntity.class,ede.getEmployeeId());
+			ede1.setPassword(ede.getPassword());
+			ede1.setFirstname(ede.getFirstname());
+			ede1.setLastname(ede.getLastname());
+			ede1.setDepartment(ede.getDepartment());
+			ede1.setDesignation(ede.getDesignation());
+			ede1.setPhoneno(ede.getPhoneno());
+			ede1.setEmailid(ede.getEmailid());
+			
+			session.saveOrUpdate(ede1);
+			System.out.println("Profile updated.....");
+			
+			session.getTransaction().commit();
+			//session.close();
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+	}
+	
 }
 	
 	

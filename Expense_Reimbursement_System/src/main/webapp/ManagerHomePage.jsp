@@ -8,6 +8,7 @@
 <style>
 h1 {text-align: center;}
 h2 {text-align: center;}
+h3 {text-align: center;}
 body {
   background-image: url('admin.jpg');
   background-repeat: no-repeat;
@@ -28,7 +29,7 @@ body {
 <body>
 <h1><b>Bharathinfo.msdk</b></h1>
 <h2><b>Welcome to Manager Home Page</b></h2>
-
+<h3><i>"A good leader leads the people from above them. A great leader leads the from within them." - M.D.Arnold</i></h3>
 <div class="center">
 <form action="http://localhost:8080/Expense_Reimbursement_System/Viewallreimrequest"  method="post">
 <input type="submit" value=" View all Reimbursement Requests">

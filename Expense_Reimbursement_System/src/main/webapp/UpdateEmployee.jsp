@@ -19,7 +19,7 @@ h3 {text-align: center;}
 
 <style>
 body {
-  background-image: url('signupbg.jpg');
+  background-image: url('login2bg.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -29,17 +29,17 @@ body {
     
 <div class="container">
   <h1> <b>Bharathinfo.msdk</b> </h1>
-  <h2>Welcome to our Expense Reimbursement Portal </h2>
-  <h3>New user please register for sign up </h3>
+  <h2><b>Update your personal Details</b> </h2>
+ 
 
-<form action="http://localhost:8080/Expense_Reimbursement_System/RegistrationServlet" method="post">
+<form action="http://localhost:8080/Expense_Reimbursement_System/UpdateProfileDetails" method="post">
             
   <table class="table table-hover">
   
-      <tr>
+     <!--   <tr>
         <td><b>Employee ID</b></td>
         <td><Input  type="text" name="id" ></td>       
-      </tr>
+      </tr>-->
       
       <tr>
         <td><b>Password</b></td>
@@ -81,12 +81,13 @@ body {
         <td><input type="reset" value="Cancel"></td>
         <td><input type="submit" value="submit"> </td> 
       </tr>
-      
-      <p><b>Already have an account?</b><a href="http://localhost:8080/Expense_Reimbursement_System/2Login.jsp"><b>user login here</b></a> </p>
-      
+ 
    </tbody>
   </table>
  </form>
+ <form action="http://localhost:8080/Expense_Reimbursement_System/ManagerHomePage.jsp" > 
+   <input type="submit" value="back to Home">
+   </form>
 </div>
 
 </body>

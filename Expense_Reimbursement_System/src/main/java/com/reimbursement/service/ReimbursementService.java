@@ -36,4 +36,6 @@ public interface ReimbursementService {
 	public List<ReimbursementDetailsEntity> viewallpending();
 	
 	public void updateReimbursementRequest(Integer rid ,String type);
+	
+	public void updateprofile(EmployeeDetails ed);
 }

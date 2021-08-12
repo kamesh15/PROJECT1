@@ -29,8 +29,10 @@ public class UpdateApproveDeny extends HttpServlet {
 		Integer id=Integer.parseInt(rid);
 		employeedao.updateReimbursementRequest(id, type);
 		
-		out.println("Reimbursement Id: "+rid +"  "+"Status: "+type);
-		out.println("You have validated the employee Reimbursement Request , Please go back to home");
+		out.println("<table>");
+		
+		out.println("<tr><td>"+"Reimbursement Id: "+rid+"</td><td>"+"Status: "+type+"</tr></td>");
+		out.println("\n You have validated the employee Reimbursement Request , Please go back to home");
 		out.println("<form action='ManagerHomePage.jsp'> <input type='submit' value='back to Home'></form> ");
 		
 }

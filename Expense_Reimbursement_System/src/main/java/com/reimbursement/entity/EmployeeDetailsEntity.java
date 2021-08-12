@@ -46,7 +46,6 @@ public class EmployeeDetailsEntity {
 	private String type;
 	
 	@OneToMany(cascade=CascadeType.ALL,targetEntity=ReimbursementDetailsEntity.class)
-	
 	List<ReimbursementDetailsEntity> reimbursementList;
 	
 	public List<ReimbursementDetailsEntity> getReimbursementList() {
@@ -109,6 +108,7 @@ public class EmployeeDetailsEntity {
 	public void setPhoneno(String phoneno) {
 		this.phoneno = phoneno;
 	}
+	
 	@Override
 	public String toString() {
 		return "EmployeeDetailsEntity [employeeId=" + employeeId + ", password=" + password + ", firstname=" + firstname

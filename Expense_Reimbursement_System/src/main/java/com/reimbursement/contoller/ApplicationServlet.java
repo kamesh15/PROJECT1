@@ -45,7 +45,7 @@ public class ApplicationServlet extends HttpServlet {
 				
 				List<ReimbursementDetailsEntity> elist=ersservice.displayreimdetailsofemp(empid);
 				
-				out.println("<table width=1300 height=700 border=1 style='background-color:#bfceff'>");
+				out.println("<table width=80% height=50% border=1 style='background-color:#fffade'>");
 				out.println("<caption> Your all Reimbursement details </caption>");
 				out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");
 				for(ReimbursementDetailsEntity e: elist)

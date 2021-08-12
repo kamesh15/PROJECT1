@@ -77,5 +77,10 @@ public class ReimbursementServiceImpl implements ReimbursementService{
 	{
 		 employeedao.updateReimbursementRequest(rid, type);
 	}
+	
+	public void updateprofile(EmployeeDetails ed)
+	{
+		employeedao.updateprofile(ed);
+	}
 }
 

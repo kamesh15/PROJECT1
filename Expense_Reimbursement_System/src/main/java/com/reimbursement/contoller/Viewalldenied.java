@@ -28,7 +28,7 @@ public class Viewalldenied extends HttpServlet {
 		
 		List<ReimbursementDetailsEntity> rlist=ersservice.viewalldenied();
 		
-		out.println("<table width=1000 height=500 border=1>");
+		out.println("<table width=85% height=55% border=1 style='background-color:#f0f5ff'>");
 		out.println("<caption> Employee Details </caption>");
 		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Designation</th><th>Phone no</th><th>Email Id</th><tr>");
 		for(EmployeeDetailsEntity e: elist)
@@ -37,7 +37,7 @@ public class Viewalldenied extends HttpServlet {
 		}
 		out.println("</table>");
 		
-		out.println("<table width=1300 height=700 border=1>");
+		out.println("<table width=85% height=55% border=1 style='background-color:#ffc4c4'>");
 		out.println("<caption> Denied Reimbursement Details </caption>");
 		out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");
 		for(ReimbursementDetailsEntity r:rlist)

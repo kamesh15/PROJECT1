@@ -34,4 +34,6 @@ public interface ReimbursementDAO {
 	public List<ReimbursementDetailsEntity> viewallpending();
 	
 	public void updateReimbursementRequest(Integer reimbursementId ,String status);
+	
+	public void updateprofile(EmployeeDetails ed);
 }

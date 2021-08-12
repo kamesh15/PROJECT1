@@ -64,6 +64,12 @@
   	<description></description>
   	<servlet-class>com.reimbursement.contoller.UpdatePageServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UpdateProfileDetails</servlet-name>
+  	<display-name>UpdateProfileDetails</display-name>
+  	<description></description>
+  	<servlet-class>com.reimbursement.contoller.UpdateProfileDetails</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationServlet</servlet-name>
   	<url-pattern>/RegistrationServlet</url-pattern>
@@ -103,5 +109,9 @@
   <servlet-mapping>
   	<servlet-name>UpdatePageServlet</servlet-name>
   	<url-pattern>/UpdatePageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateProfileDetails</servlet-name>
+  	<url-pattern>/UpdateProfileDetails</url-pattern>
   </servlet-mapping>
 </web-app>
