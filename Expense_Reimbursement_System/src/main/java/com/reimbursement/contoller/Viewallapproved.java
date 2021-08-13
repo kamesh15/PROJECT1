@@ -27,6 +27,7 @@ public class Viewallapproved extends HttpServlet {
 		List<EmployeeDetailsEntity> elist = ersservice.displayallempdetails();
 		List<ReimbursementDetailsEntity> rlist = ersservice.viewallapproved();
 		
+	//all employee details....
 		out.println("<table width=85% height=55% border=1 style='background-color:#f0f5ff'>");
 		out.println("<caption> Employee Details </caption>");
 		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Designation</th><th>Phone no</th><th>Email Id</th><tr>");
@@ -36,6 +37,7 @@ public class Viewallapproved extends HttpServlet {
 		}
 		out.println("</table>");
 		
+	//All approved details......
 		out.println("<table width=85% height=55% border=1 style='background-color:#ccffcf'>");
 		out.println("<caption> Approved Reimbursement Details </caption>");
 		out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");

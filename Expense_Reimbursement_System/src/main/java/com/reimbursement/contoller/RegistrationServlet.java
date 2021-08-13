@@ -43,15 +43,15 @@ public class RegistrationServlet extends HttpServlet {
 		employee.setPhoneno(phoneno);
 		employee.setType(type);
 		
-		
 		ReimbursementService ersservice=new ReimbursementServiceImpl();	
 		
 		List<EmployeeDetailsEntity> elist=ersservice.registrationvalidation();
 		boolean isPresent=false;
 		RequestDispatcher rd=null;
-			
+		
+	//Login Validation
 		for(EmployeeDetailsEntity e:elist) {	
-			if(id.equals(e.getEmployeeId()) || email.equals(e.getEmailid())) 
+			if(id.equals(e.getEmployeeId()) || email.equals(e.getEmailid()) || pwd.equals(e.getPassword())) 
 			{
 				isPresent=true;
 				break;

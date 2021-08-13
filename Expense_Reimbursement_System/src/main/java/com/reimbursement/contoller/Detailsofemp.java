@@ -30,6 +30,7 @@ public class Detailsofemp extends HttpServlet {
 		
 		List<EmployeeDetailsEntity> elist=ersservice.detailsofemp(empid);
 		
+	//Employee Details for Particular Employee.....
 		out.println("<table width=1300 height=100 border=1 style='background-color:#ffd6eb'>");
 		out.println("<caption> Your personal details </caption>");
 		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Designation</th><th>Phone no</th><th>Email Id</th><tr>");

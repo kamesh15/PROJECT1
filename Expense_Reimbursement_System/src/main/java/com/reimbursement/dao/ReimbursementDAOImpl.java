@@ -17,6 +17,8 @@ import com.reimbursement.model.ReimbursementDetails;
 import com.reimbursement.util.HibernateUtil;
 
 public class ReimbursementDAOImpl implements ReimbursementDAO{
+//----------------------------------------------------------------------------------------------------------------
+	//Inserting employee details..........
 	
 	public void addemployeedetails(EmployeeDetails ed) {
 		
@@ -36,7 +38,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		 
 	 }
 	
-	
+//----------------------------------------------------------------------------------------------------------------	
+	//Getting employee details registration validation.........
 	
 	public List<EmployeeDetailsEntity> registrationvalidation(){
 		List<EmployeeDetailsEntity> elist=new ArrayList<EmployeeDetailsEntity>();
@@ -55,6 +58,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		return elist;
 	}
 	
+//------------------------------------------------------------------------------------------------------------------
+	//Getting employee details login validation.........
 	
 	public List<EmployeeDetailsEntity> loginvalidation(){
 		List<EmployeeDetailsEntity> elist=new ArrayList<EmployeeDetailsEntity>();
@@ -73,7 +78,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		return elist;
 	}
 	
-	
+//------------------------------------------------------------------------------------------------------------------
+	//Inserting Reimbursement request details..........
 	
 	public void addemployeereimdetails(ReimbursementDetails rd) {
 		
@@ -91,6 +97,9 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		}
 		
 	}
+	
+//-------------------------------------------------------------------------------------------------------------------
+	//Display all employee details..................
 	
 	public List<EmployeeDetailsEntity> displayallempdetails()
 	{
@@ -111,7 +120,9 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 				 
 				return elist;
 			}
-	
+
+//-------------------------------------------------------------------------------------------------------------
+	//Displaying reimbursement details for a particular employee........
 	
 	public List<ReimbursementDetailsEntity> displayreimdetailsofemp(String empid)
 	{
@@ -136,6 +147,9 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		
 	}
 	
+//-------------------------------------------------------------------------------------------------------------
+	//Display all reimbursement details to particular employee
+	
 	public List<ReimbursementDetailsEntity> reimdetailsforemp(String empid)
 	{
 		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
@@ -159,6 +173,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 	
 	}
 	
+//---------------------------------------------------------------------------------------------------------------
+	//Display employee personal details......................
 	
 	public List<EmployeeDetailsEntity> detailsofemp(String empid)
 	{
@@ -181,6 +197,9 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 				return elist;
 	}
 	
+//--------------------------------------------------------------------------------------------------------------------
+	//display all reimbursement details to manager.....................
+	
 	public List<ReimbursementDetailsEntity> viewallreimrequest()
 	{
 		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
@@ -199,6 +218,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		return elist;
 	}
 	
+//---------------------------------------------------------------------------------------------------------------------
+	//display all approved requests..........................
 	
 	public List<ReimbursementDetailsEntity> viewallapproved()
 	{
@@ -222,6 +243,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 
 	}
 	
+//------------------------------------------------------------------------------------------------------------
+	//display all denied requests..........
 	
 	public List<ReimbursementDetailsEntity> viewalldenied()
 	{
@@ -244,6 +267,10 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		return elist;
 	}
 	
+	
+//-----------------------------------------------------------------------------------------------------------------
+	//display all pending details...........
+	
 	public List<ReimbursementDetailsEntity> viewallpending()
 	{
 		List<ReimbursementDetailsEntity> elist=new ArrayList<ReimbursementDetailsEntity>();
@@ -264,6 +291,10 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		 
 		return elist;
 	}
+	
+
+//------------------------------------------------------------------------------------------------------------------
+	// Update reimbursement request status.......
 	
 	public void updateReimbursementRequest(Integer reimbursementId ,String status)
 	{
@@ -289,6 +320,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 	}
 	
 	
+//-----------------------------------------------------------------------------------------------------------------
+	//update personal informations.....
 	
 	public void updateprofile(EmployeeDetails ed)
 	{

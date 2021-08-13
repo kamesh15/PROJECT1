@@ -30,6 +30,7 @@ public class Reimdetailsforemp extends HttpServlet {
 		ReimbursementService ersservice=new ReimbursementServiceImpl();	
 		List<ReimbursementDetailsEntity> elist=ersservice.reimdetailsforemp(empid);
 		
+	//Display Reimbursement for particular Employee....
 		out.println("<table width=80% height=70% border=1 style='background-color:#f0f5ff'>");
 		out.println("<caption> Your all Reimbursement details </caption>");
 		out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");

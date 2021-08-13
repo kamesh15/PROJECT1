@@ -28,6 +28,7 @@ public class UpdatePageServlet extends HttpServlet {
 		
 		List<ReimbursementDetailsEntity> rlist=ersservice.viewallpending();
 		
+	//Display all Employee Details.....
 		out.println("<table width=70% height=50% border=1 style='background-color:#fff3ed'>");
 		out.println("<caption> Employee Details </caption>");
 		out.println("<tr><th>Employee Id</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Email Id</th><tr>");
@@ -37,6 +38,7 @@ public class UpdatePageServlet extends HttpServlet {
 		}
 		out.println("</table>");
 		
+	//View all Pending Reimbursement requests.....
 		out.println("<table width=1300 height=700 border=1 style='background-color:#f0f5ff'>");
 		out.println("<caption> Pending Reimbursement Details </caption>");
 		out.println("<tr><th>Reimbursement Id</th><th>Employee Id</th><th>Type of reimbursement</th><th>Amount of reimbursement</th><th>Reimbursement Description</th><th>Status</th><tr>");
@@ -49,6 +51,7 @@ public class UpdatePageServlet extends HttpServlet {
 		
 		out.println("<p> Beign Your Admistration for Approve/Deny the Reimbursement Application" );
 		
+	//Updating requests..........
 		out.println("<form action='http://localhost:8080/Expense_Reimbursement_System/UpdateApproveDeny'  method='post'>");
 		out.println("<caption> Select the option from all reimbursement Request which need to be Updated Reimbursement Id :  </caption>");
 		out.println("<select name='rid'>");
@@ -58,8 +61,8 @@ public class UpdatePageServlet extends HttpServlet {
 			out.println("<option name='rid'>"+r.getReimbursementId()+"");
 		}
 		out.println("</select>");
-		out.println("<input type='submit' name='type' value='Accept'/>");
-		out.println("<input type='submit' name='type' value='Reject'/>");
+		out.println("<input type='submit' name='type' value='Accepted'/>");
+		out.println("<input type='submit' name='type' value='Rejected'/>");
 		out.println("</form>");
 		
 		out.println("<form action='ManagerHomePage.jsp'> <input type='submit' value='back to Home'></form> ");

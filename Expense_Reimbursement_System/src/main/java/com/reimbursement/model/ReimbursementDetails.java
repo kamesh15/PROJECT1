@@ -1,14 +1,18 @@
 package com.reimbursement.model;
 
+import org.hibernate.type.BlobType;
+
+import javassist.bytecode.ByteArray;
+
 public class ReimbursementDetails {
 
 	private Integer reimbursementId;
 	private String employeeId;
-	
 	private String reimbursementtype;
 	private Double amount;
 	private String description;
 	private String status;
+	private ByteArray invoice;
 	//file upload
 	
 	public Integer getReimbursementId() {
@@ -23,8 +27,6 @@ public class ReimbursementDetails {
 	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
-
-
 	public String getReimbursementtype() {
 		return reimbursementtype;
 	}
